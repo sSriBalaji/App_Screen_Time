@@ -27,4 +27,9 @@ public class AppUsageLogicService {
         Date currentDate = truncateToDay(Instant.now());
         return appUsageRepo.findByUsageDate(currentDate);
     }
+
+    public List<AppUsageDto> dailySum() {
+        //i need to group by date and sum the total time
+        return appUsageRepo.findByDate();
+    }
 }
