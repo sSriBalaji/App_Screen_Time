@@ -24,4 +24,9 @@ public class AppUsageController {
         return appUsageLogicService.TodayScreenTime();
     }
 
+    @GetMapping("/daily")
+    public List<AppUsageDto> GetSumOfScreenTime(){
+        return appUsageLogicService.dailySum();
+    }
+
 }
