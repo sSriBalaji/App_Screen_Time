@@ -6,7 +6,7 @@ import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
-import javafx.scene.chart.PieChart;
+import javafx.scene.chart.*;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import org.apache.http.client.methods.CloseableHttpResponse;
@@ -20,6 +20,7 @@ import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class DataController {
 
@@ -40,21 +41,33 @@ public class DataController {
 
     private ObservableList<DataModel> usageData = FXCollections.observableArrayList();
 
+    private ObservableList<DailyDataModel> DailyUsageData = FXCollections.observableArrayList();
+
     @FXML
     private PieChart pieChartAnalysis;
 
-//    private void updatePieChart(ObservableList<DataModel> usageData){
-//        if(usageData != null && !usageData.isEmpty()){
-//            ObservableList<PieChart.Data> pieChartData = FXCollections.observableArrayList();
-//            for(DataModel dm : usageData){
-//                pieChartData.add(new PieChart.Data(dm.getAppName(),dm.getTotalTime()));
-//            }
-//            pieChartAnalysis.getData().setAll(pieChartData);
-//        }
-//        else{
-//            pieChartAnalysis.getData().clear();
-//        }
-//    }
+    @FXML
+    private LineChart<String,Number> dailyScreenTimeLineChart;
+
+    private void updateDailyBarChart(ObservableList<DailyDataModel> DailyUsageData){
+
+
+        if(DailyUsageData != null && !DailyUsageData.isEmpty()){
+            SimpleDateFormat dateFormat = new SimpleDateFormat("EEE dd");
+            XYChart.Series<String,Number> series = new XYChart.Series<>();
+            series.setName("Daily Total Screen Time");
+
+            for(DailyDataModel ddm : DailyUsageData){
+                String formattedDate = dateFormat.format(ddm.getUsageDate());
+                Number totalTime = ddm.getTotalTime();
+                series.getData().add(new XYChart.Data<>(formattedDate,totalTime));
+            }
+            Platform.runLater(() ->{
+                dailyScreenTimeLineChart.getData().clear();
+                dailyScreenTimeLineChart.getData().add(series);
+            });
+        }
+    }
 
     private void updatePieChart(ObservableList<DataModel> usageData) {
         System.out.println("Updating PieChart with usageData size: " + (usageData != null ? usageData.size() : "null"));
@@ -80,8 +93,11 @@ public class DataController {
     @FXML
     private void initialize() {
 
+
         // Fetch data on startup
+        fetchDailyDataAsync();
         fetchDataAsync();
+
         // Bind ObservableList to TableView
         System.out.println("the size before using in function : "+usageData);
         list_inTable.setItems(usageData);
@@ -100,8 +116,11 @@ public class DataController {
             String timeSpend = ConvertSecondsToHMS(totalTime);
             return new SimpleStringProperty(timeSpend);
         });
+
+        dailyScreenTimeLineChart.getData().clear();
         //pie chart
-        updatePieChart(usageData);
+//        updatePieChart(usageData);
+//        updateDailyBarChart(DailyUsageData);
 
     }
 
@@ -112,6 +131,43 @@ public class DataController {
 
         return String.format("%02d:%02d:%02d",hours,minutes,seconds);
 
+    }
+
+    private void fetchDailyDataAsync(){
+        new Thread(() -> {
+            String url = "http://localhost:8080/app/screen/daily";
+            CloseableHttpClient httpClient = null;
+            try {
+                httpClient = HttpClients.createDefault();
+                HttpGet request = new HttpGet(url);
+                try(CloseableHttpResponse response = httpClient.execute(request)){
+                    String json = EntityUtils.toString((response.getEntity()));
+                    ObjectMapper mapper = new ObjectMapper();
+                    List<DailyDataModel> dailyUsageList = mapper.readValue(json,mapper.getTypeFactory().constructCollectionType(List.class, DailyDataModel.class));
+                    Platform.runLater(() ->{
+                        DailyUsageData.setAll(dailyUsageList);
+                        dailyScreenTimeLineChart.getData().clear();
+                        updateDailyBarChart(DailyUsageData);
+                    });
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+                System.err.println("can't reach the daily api end point : "+e.getMessage());
+                Platform.runLater(() -> {
+                    DailyUsageData.setAll();
+                    dailyScreenTimeLineChart.getData().clear();
+                    updateDailyBarChart(DailyUsageData);
+                });
+            } finally {
+                if(httpClient != null){
+                    try {
+                        httpClient.close();
+                    }catch (IOException e){
+                        System.err.println("can't close the httpclient: "+e.getMessage());
+                    }
+                }
+            }
+        }).start();
     }
 
     private void fetchDataAsync() {
@@ -134,6 +190,7 @@ public class DataController {
                     Platform.runLater(() -> {
                         usageData.setAll(usageList);
                         updatePieChart(usageData);
+
                     });
                 }
             } catch (IOException e) {
@@ -162,6 +219,9 @@ public class DataController {
     private void refreshData() {
         usageData.clear();// Clear current data
         pieChartAnalysis.getData().clear();
+        DailyUsageData.clear();
+        dailyScreenTimeLineChart.getData().clear();
         fetchDataAsync();
+        fetchDailyDataAsync();
     }
 }
