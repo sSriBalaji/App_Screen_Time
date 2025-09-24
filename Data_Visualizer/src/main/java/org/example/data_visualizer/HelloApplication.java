@@ -25,6 +25,7 @@ public class HelloApplication extends Application {
 //        Scene scene = new Scene(LineChart(),400,400);
         stage.setTitle("Screen Time");
         stage.setScene(scene);
+        stage.setMaximized(true);
         stage.show();
     }
 
