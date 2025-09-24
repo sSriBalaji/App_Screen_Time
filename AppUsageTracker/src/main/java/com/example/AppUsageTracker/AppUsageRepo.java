@@ -19,4 +19,12 @@ public interface AppUsageRepo extends JpaRepository<AppUsage,Long> {
     AppUsage findByApp_UsageDate(@Param("appName")String currentAppName, @Param("usageDate") Date currentDate);
 
     List<AppUsage> findByUsageDate(Date currentDate);
+
+    @Query("""
+            select a.usageDate as usageDate , sum(a.totalTime) as totalTime
+            from AppUsage a
+            group by a.usageDate
+            order by a.usageDate desc
+            """)
+    List<AppUsageDto> findByDate();
 }
