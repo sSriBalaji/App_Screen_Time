@@ -7,8 +7,10 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.chart.*;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.Tooltip;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import javafx.scene.control.cell.PropertyValueFactory;
 import org.apache.http.client.methods.HttpGet;
@@ -47,7 +49,21 @@ public class DataController {
     private PieChart pieChartAnalysis;
 
     @FXML
-    private LineChart<String,Number> dailyScreenTimeLineChart;
+    private BarChart<String,Number> dailyScreenTimeLineChart;
+
+    @FXML
+    private ComboBox<String> chartChoice;
+
+    @FXML
+    private BarChart<String,Number> barChartAnalysis;
+
+    @FXML
+    private LineChart<String,Number> lineChartAnalysis;
+
+
+
+
+
 
     private void updateDailyBarChart(ObservableList<DailyDataModel> DailyUsageData){
 
@@ -60,12 +76,66 @@ public class DataController {
             for(DailyDataModel ddm : DailyUsageData){
                 String formattedDate = dateFormat.format(ddm.getUsageDate());
                 Number totalTime = ddm.getTotalTime();
-                series.getData().add(new XYChart.Data<>(formattedDate,totalTime));
+                XYChart.Data<String,Number> data = new XYChart.Data<>(formattedDate,totalTime);
+                series.getData().add(data);
+
             }
             Platform.runLater(() ->{
                 dailyScreenTimeLineChart.getData().clear();
                 dailyScreenTimeLineChart.getData().add(series);
+                for (XYChart.Series<String, Number> s : dailyScreenTimeLineChart.getData()) {
+                    for (XYChart.Data<String, Number> data : s.getData()) {
+                        if (data.getNode() != null) {
+                            long time = data.getYValue().longValue();
+                            String value = ConvertSecondsToHMS(time);
+                            Tooltip tooltip = new Tooltip(value);
+                            System.out.println(data.getXValue());
+                            Tooltip.install(data.getNode(), tooltip);
+                        }
+                    }
+                }
             });
+        }
+    }
+
+    private void updateLineChart(ObservableList<DataModel> usageData){
+        System.out.println("Updating LineChart with usageData");
+
+        if(usageData != null && !usageData.isEmpty()){
+            XYChart.Series<String ,Number> series = new XYChart.Series<>();
+            series.setName("APPS");
+
+            for(DataModel dm : usageData){
+                String xAxisData = dm.getAppName();
+                long yAxisData = dm.getTotalTime();
+                XYChart.Data<String,Number> data = new XYChart.Data<>(xAxisData,yAxisData);
+                series.getData().add(data);
+            }
+            lineChartAnalysis.getData().clear();
+            lineChartAnalysis.getData().add(series);
+        }
+        else{
+            lineChartAnalysis.getData().clear();
+        }
+    }
+
+    private void updateBarChart(ObservableList<DataModel> usageData){
+        System.out.println("Updating BarChart with usageData");
+
+        if(usageData != null && !usageData.isEmpty()){
+            XYChart.Series<String,Number> series = new XYChart.Series<>();
+            series.setName("APPS");
+            for(DataModel dm: usageData){
+                String xAxisData = dm.getAppName();
+                long yAxisData = dm.getTotalTime();
+                XYChart.Data<String,Number> data = new XYChart.Data<>(xAxisData,yAxisData);
+                series.getData().add(data);
+            }
+            barChartAnalysis.getData().clear();
+            barChartAnalysis.getData().add(series);
+        }
+        else{
+            barChartAnalysis.getData().clear();
         }
     }
 
@@ -90,13 +160,47 @@ public class DataController {
         }
     }
 
+    private void updateComboBox(){
+        ObservableList<String> choices = FXCollections.observableArrayList(
+                "Pie Chart","Line Chart","Bar Chart"
+        );
+
+        chartChoice.setItems(choices);
+//        chartChoice.setValue("Pie Chart");
+
+        chartChoice.setOnAction((event) -> {
+            int selectedIndex = chartChoice.getSelectionModel().getSelectedIndex();
+
+            System.out.println("value is "+selectedIndex);
+            handleChoiceSelection(selectedIndex);
+        });
+    }
+
+    private void handleChoiceSelection(int index){
+        switch (index) {
+            case 0:
+                fetchDataAsync(0);
+                break;
+            case 1:
+                fetchDataAsync(1);
+                break;
+            case 2:
+                fetchDataAsync(2);
+                break;
+            default:
+                System.out.println("Pie chart selected");
+        }
+    }
+
     @FXML
     private void initialize() {
+        handleChoiceSelection(0);
+        updateComboBox();
 
 
         // Fetch data on startup
+//        fetchDataAsync();
         fetchDailyDataAsync();
-        fetchDataAsync();
 
         // Bind ObservableList to TableView
         System.out.println("the size before using in function : "+usageData);
@@ -129,7 +233,7 @@ public class DataController {
         long minutes = (totalTime%3600) / 60;
         long seconds = (totalTime%60);
 
-        return String.format("%02d:%02d:%02d",hours,minutes,seconds);
+        return String.format("%02dhr : %02dmin : %02dsec",hours,minutes,seconds);
 
     }
 
@@ -170,7 +274,7 @@ public class DataController {
         }).start();
     }
 
-    private void fetchDataAsync() {
+    private void fetchDataAsync(int idx) {
         new Thread(() -> {
             String url = "http://localhost:8080/app/screen/today"; // Verify this endpoint
             CloseableHttpClient httpClient = null;
@@ -189,7 +293,25 @@ public class DataController {
                     // Update UI on JavaFX thread
                     Platform.runLater(() -> {
                         usageData.setAll(usageList);
-                        updatePieChart(usageData);
+                        if(idx==0) {
+                            barChartAnalysis.setVisible(false);
+                            lineChartAnalysis.setVisible(false);
+                            pieChartAnalysis.setVisible(true);
+                            updatePieChart(usageData);
+                        }
+                        else if(idx==1){
+                            barChartAnalysis.setVisible(false);
+                            pieChartAnalysis.setVisible(false);
+                            lineChartAnalysis.setVisible(true);
+                            updateLineChart(usageData);
+                        }
+                        else if(idx==2) {
+                            pieChartAnalysis.setVisible(false);
+                            lineChartAnalysis.setVisible(false);
+                            barChartAnalysis.setVisible(true);
+                            updateBarChart(usageData);
+                        }
+
 
                     });
                 }
@@ -199,7 +321,6 @@ public class DataController {
                 // Clear or show error on UI thread
                 Platform.runLater(() -> {
                     usageData.setAll();
-                    updatePieChart(usageData);
                 });
             } finally {
                 if (httpClient != null) {
@@ -221,7 +342,7 @@ public class DataController {
         pieChartAnalysis.getData().clear();
         DailyUsageData.clear();
         dailyScreenTimeLineChart.getData().clear();
-        fetchDataAsync();
+        updateComboBox();
         fetchDailyDataAsync();
     }
 }

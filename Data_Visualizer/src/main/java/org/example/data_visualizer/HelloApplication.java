@@ -23,7 +23,9 @@ public class HelloApplication extends Application {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Home_Screen.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
 //        Scene scene = new Scene(LineChart(),400,400);
+        scene.getStylesheets().add(String.valueOf(getClass().getResource("application.css")));
         stage.setTitle("Screen Time");
+
         stage.setScene(scene);
         stage.setMaximized(true);
         stage.show();
