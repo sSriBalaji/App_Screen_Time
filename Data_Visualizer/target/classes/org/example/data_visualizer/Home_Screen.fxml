@@ -8,6 +8,7 @@
 <?import javafx.scene.chart.PieChart?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
@@ -23,12 +24,25 @@
       <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="600.0" />
    </columnConstraints>
    <rowConstraints>
-      <RowConstraints fillHeight="false" maxHeight="30.0" minHeight="10.0" prefHeight="30.0" vgrow="NEVER" />
+      <RowConstraints fillHeight="false" maxHeight="40.0" minHeight="10.0" prefHeight="30.0" vgrow="NEVER" />
       <RowConstraints fillHeight="false" maxHeight="1.7976931348623157E308" prefHeight="171.20000610351562" vgrow="ALWAYS" />
       <RowConstraints maxHeight="1.7976931348623157E308" prefHeight="200.79999389648435" />
    </rowConstraints>
    <children>
-      <Label alignment="CENTER" maxHeight="30.0" prefHeight="30.0" prefWidth="600.0" text="App Screen Time" textAlignment="CENTER" GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.rowIndex="0" />
+      <Label alignment="CENTER" maxHeight="30.0" prefHeight="30.0" prefWidth="600.0" text="App Screen Time" textAlignment="CENTER" GridPane.halignment="CENTER" />
+      <HBox alignment="CENTER_RIGHT" prefHeight="34.0" prefWidth="600.0" GridPane.halignment="RIGHT" GridPane.valignment="CENTER">
+         <children>
+            <DatePicker fx:id="calender">
+               <HBox.margin>
+                  <Insets right="10.0" />
+               </HBox.margin>
+            </DatePicker>
+            <Button fx:id="refresh" mnemonicParsing="false" onAction="#refreshData" text="Refresh" textAlignment="CENTER" />
+         </children>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+      </HBox>
       <VBox alignment="TOP_CENTER" maxHeight="1.7976931348623157E308" prefHeight="300.0" prefWidth="600.0" GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.rowIndex="2">
          <children>
             <TableView fx:id="list_inTable" maxWidth="-Infinity" pickOnBounds="false" prefHeight="200.0" prefWidth="700.0">
@@ -41,10 +55,6 @@
             </TableView>
          </children>
       </VBox>
-      <Button fx:id="refresh" mnemonicParsing="false" onAction="#refreshData" text="Refresh" textAlignment="CENTER" GridPane.columnIndex="0" GridPane.halignment="RIGHT" GridPane.rowIndex="0" GridPane.valignment="BOTTOM">
-         <GridPane.margin>
-            <Insets right="10.0" top="20.0" />
-         </GridPane.margin></Button>
       <HBox alignment="TOP_CENTER" maxWidth="1.7976931348623157E308" prefHeight="500.0" prefWidth="800.0" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
          <children>
             <ComboBox fx:id="chartChoice" prefHeight="22.0" prefWidth="101.0" promptText="Pie Chart" />
@@ -52,7 +62,7 @@
                <children>
                   <StackPane prefHeight="500.0" prefWidth="200.0">
                      <children>
-                        <BarChart fx:id="barChartAnalysis" prefHeight="500.0">
+                        <BarChart fx:id="barChartAnalysis" prefHeight="500.0" title="App Usage Time">
                           <xAxis>
                             <CategoryAxis side="BOTTOM" />
                           </xAxis>
@@ -65,7 +75,7 @@
                               <Insets top="20.0" />
                            </padding>
                         </PieChart>
-                        <LineChart fx:id="lineChartAnalysis">
+                        <LineChart fx:id="lineChartAnalysis" title="App Usage Time">
                           <xAxis>
                             <CategoryAxis side="BOTTOM" />
                           </xAxis>

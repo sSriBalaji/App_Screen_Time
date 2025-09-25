@@ -7,10 +7,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.chart.*;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.Tooltip;
+import javafx.scene.control.*;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import javafx.scene.control.cell.PropertyValueFactory;
 import org.apache.http.client.methods.HttpGet;
@@ -59,6 +56,9 @@ public class DataController {
 
     @FXML
     private LineChart<String,Number> lineChartAnalysis;
+
+    @FXML
+    private DatePicker calender;
 
 
 
