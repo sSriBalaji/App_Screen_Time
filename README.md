@@ -5,6 +5,7 @@ Features
 
 Real-time Tracking: Monitors the active window using JNA (Windows-specific) and logs time spent per application.
 Data Storage: Stores usage data (app name, time spent, date/time) in an SQLite database (screentime.db).
+
 Data Visualization:
 Displays raw data in a JavaFX TableView.
 Visualizes total time per app in a PieChart or BarChart, toggled via a ComboBox.
@@ -34,26 +35,10 @@ mvn clean install
 
 This downloads all dependencies specified in pom.xml, including JavaFX, JNA, SQLite-JDBC, and BootstrapFX.
 
-Project Structure:
-ScreenTimeTracker/
-├── src/
-│   ├── main/
-│   │   ├── java/
-│   │   │   ├── org/example/javafx/
-│   │   │   │   ├── ScreenTimeTracker.java
-│   │   │   │   ├── ScreenTimeData.java
-│   │   │   │   ├── ActiveWindowTracker.java
-│   │   │   │   ├── ScreenTimeLogger.java
-│   │   │   ├── module-info.java
-│   │   ├── resources/
-│   │       ├── styles.css (optional for custom CSS)
-├── screentime.db (generated at runtime)
-├── pom.xml
-├── README.md
-├── screenshots/
+Verify Dependencies:
+Ensure pom.xml includes:
 
-
-Verify Dependencies:Ensure pom.xml includes:
+```
 <dependencies>
     <dependency>
         <groupId>net.java.dev.jna</groupId>
@@ -116,10 +101,10 @@ Verify Dependencies:Ensure pom.xml includes:
         <version>17.3</version>
     </dependency>
 </dependencies>
-
-
+```
 Module Configuration:Ensure module-info.java is set up:
-module org.example.javafx {
+```
+module org.example.javafx{
     requires javafx.controls;
     requires javafx.fxml;
     requires javafx.web;
@@ -132,10 +117,12 @@ module org.example.javafx {
     requires com.sun.jna;
     requires com.sun.jna.platform;
     requires java.sql;
-
     opens org.example.javafx to javafx.fxml, javafx.base;
     exports org.example.javafx;
 }
+```
+
+
 
 
 
@@ -147,6 +134,7 @@ Using Maven:mvn javafx:run
 
 
 Using an IDE:
+
 Open the project in IntelliJ IDEA, Eclipse, or another IDE.
 Run ScreenTimeTracker.java as a Java application.
 
