@@ -15,11 +15,7 @@ Theming: Supports light and dark themes using BootstrapFX, with theme selection 
 Modular Design: Built with Java 20 and JavaFX 20.0.1, using the Java Module System for encapsulation.
 Cross-dependency Support: Integrates JNA, SQLite-JDBC, and BootstrapFX for functionality and styling.
 
-Screenshots
-Dark Theme with Pie Chart
-Light Theme with Bar Chart
-Note: Replace screenshots/dark_pie_chart.png and screenshots/light_bar_chart.png with actual screenshots after running the application.
-Prerequisites
+
 
 Java Development Kit (JDK): Version 20 or higher.
 Maven: For dependency management and building the project.
@@ -29,7 +25,7 @@ IDE (Optional): IntelliJ IDEA, Eclipse, or any IDE with JavaFX support.
 Installation
 
 Clone the Repository:
-git clone https://github.com/your-username/ScreenTimeTracker.git
+git clone https://github.com/sSriBalaji/ScreenTimeTracker.git
 cd ScreenTimeTracker
 
 
