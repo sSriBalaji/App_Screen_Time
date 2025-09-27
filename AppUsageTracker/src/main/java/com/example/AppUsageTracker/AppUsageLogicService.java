@@ -19,6 +19,10 @@ public class AppUsageLogicService {
         return Date.from(localDate.atStartOfDay(java.time.ZoneId.systemDefault()).toInstant());
     }
 
+    private Date truncateToDay(LocalDate localDate){
+        return Date.from(localDate.atStartOfDay(java.time.ZoneId.systemDefault()).toInstant());
+    }
+
     public List<AppUsage> AllScreenTime() {
         return appUsageRepo.findAll();
     }
@@ -31,5 +35,10 @@ public class AppUsageLogicService {
     public List<AppUsageDto> dailySum() {
         //i need to group by date and sum the total time
         return appUsageRepo.findByDate();
+    }
+
+    public List<AppUsage> getBasedOnDate(LocalDate date) {
+        Date newDate = truncateToDay(date);
+        return appUsageRepo.findByUsageDate(newDate);
     }
 }
