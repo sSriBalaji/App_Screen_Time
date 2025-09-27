@@ -1,0 +1,289 @@
+2025-09-27T00:28:30.552+05:30  WARN 15980 --- [AppUsageTracker] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h24m47s157ms608µs100ns).
+2025-09-27T11:46:04.333+05:30  WARN 15980 --- [AppUsageTracker] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=11h17m36s475ms667µs300ns).
+2025-09-27T12:08:34.334+05:30  WARN 15980 --- [AppUsageTracker] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=19m29s942ms217µs100ns).
+2025-09-27T13:10:40.761+05:30  WARN 15980 --- [AppUsageTracker] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=20m35s836ms95µs400ns).
+2025-09-27T13:34:13.119+05:30  INFO 15948 --- [AppUsageTracker] [main] c.e.A.AppUsageTrackerApplication         : Starting AppUsageTrackerApplication using Java 24.0.2 with PID 15948 (D:\e\AppUsageTracker\AppUsageTracker\target\classes started by Sribalaji in D:\e\AppUsageTracker\AppUsageTracker)
+2025-09-27T13:34:13.121+05:30 DEBUG 15948 --- [AppUsageTracker] [main] c.e.A.AppUsageTrackerApplication         : Running with Spring Boot v3.5.6, Spring v6.2.11
+2025-09-27T13:34:13.122+05:30  INFO 15948 --- [AppUsageTracker] [main] c.e.A.AppUsageTrackerApplication         : No active profile set, falling back to 1 default profile: "default"
+2025-09-27T13:34:13.926+05:30  INFO 15948 --- [AppUsageTracker] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-09-27T13:34:13.990+05:30  INFO 15948 --- [AppUsageTracker] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 53 ms. Found 1 JPA repository interface.
+2025-09-27T13:34:14.528+05:30  INFO 15948 --- [AppUsageTracker] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-09-27T13:34:14.549+05:30  INFO 15948 --- [AppUsageTracker] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-09-27T13:34:14.550+05:30  INFO 15948 --- [AppUsageTracker] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.46]
+2025-09-27T13:34:14.619+05:30  INFO 15948 --- [AppUsageTracker] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-09-27T13:34:14.620+05:30  INFO 15948 --- [AppUsageTracker] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1445 ms
+2025-09-27T13:34:14.850+05:30  INFO 15948 --- [AppUsageTracker] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-09-27T13:34:14.924+05:30  INFO 15948 --- [AppUsageTracker] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.29.Final
+2025-09-27T13:34:14.964+05:30  INFO 15948 --- [AppUsageTracker] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-09-27T13:34:15.289+05:30  INFO 15948 --- [AppUsageTracker] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-09-27T13:34:15.339+05:30  INFO 15948 --- [AppUsageTracker] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-09-27T13:34:15.636+05:30  INFO 15948 --- [AppUsageTracker] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.sqlite.jdbc4.JDBC4Connection@2b441e56
+2025-09-27T13:34:15.638+05:30  INFO 15948 --- [AppUsageTracker] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-09-27T13:34:15.695+05:30  INFO 15948 --- [AppUsageTracker] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 3.49.1
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-09-27T13:34:16.400+05:30  INFO 15948 --- [AppUsageTracker] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-09-27T13:34:16.430+05:30  INFO 15948 --- [AppUsageTracker] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-09-27T13:34:16.702+05:30  INFO 15948 --- [AppUsageTracker] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-09-27T13:34:17.608+05:30  WARN 15948 --- [AppUsageTracker] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-09-27T13:34:18.171+05:30  INFO 15948 --- [AppUsageTracker] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-09-27T13:34:18.180+05:30  INFO 15948 --- [AppUsageTracker] [main] c.e.A.AppUsageTrackerApplication         : Started AppUsageTrackerApplication in 5.607 seconds (process running for 6.009)
+2025-09-27T13:36:21.965+05:30  INFO 15948 --- [AppUsageTracker] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-09-27T13:36:21.971+05:30  INFO 15948 --- [AppUsageTracker] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-09-27T13:36:21.974+05:30  INFO 15948 --- [AppUsageTracker] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-09-27T13:36:21.977+05:30  INFO 15948 --- [AppUsageTracker] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-09-27T13:36:21.981+05:30  INFO 15948 --- [AppUsageTracker] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-09-27T13:36:23.844+05:30  INFO 20696 --- [AppUsageTracker] [main] c.e.A.AppUsageTrackerApplication         : Starting AppUsageTrackerApplication using Java 24.0.2 with PID 20696 (D:\e\AppUsageTracker\AppUsageTracker\target\classes started by Sribalaji in D:\e\AppUsageTracker\AppUsageTracker)
+2025-09-27T13:36:23.846+05:30 DEBUG 20696 --- [AppUsageTracker] [main] c.e.A.AppUsageTrackerApplication         : Running with Spring Boot v3.5.6, Spring v6.2.11
+2025-09-27T13:36:23.846+05:30  INFO 20696 --- [AppUsageTracker] [main] c.e.A.AppUsageTrackerApplication         : No active profile set, falling back to 1 default profile: "default"
+2025-09-27T13:36:24.538+05:30  INFO 20696 --- [AppUsageTracker] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-09-27T13:36:24.605+05:30  INFO 20696 --- [AppUsageTracker] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 50 ms. Found 1 JPA repository interface.
+2025-09-27T13:36:25.100+05:30  INFO 20696 --- [AppUsageTracker] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 10009 (http)
+2025-09-27T13:36:25.120+05:30  INFO 20696 --- [AppUsageTracker] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-09-27T13:36:25.120+05:30  INFO 20696 --- [AppUsageTracker] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.46]
+2025-09-27T13:36:25.171+05:30  INFO 20696 --- [AppUsageTracker] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-09-27T13:36:25.172+05:30  INFO 20696 --- [AppUsageTracker] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1278 ms
+2025-09-27T13:36:25.397+05:30  INFO 20696 --- [AppUsageTracker] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-09-27T13:36:25.474+05:30  INFO 20696 --- [AppUsageTracker] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.29.Final
+2025-09-27T13:36:25.507+05:30  INFO 20696 --- [AppUsageTracker] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-09-27T13:36:25.768+05:30  INFO 20696 --- [AppUsageTracker] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-09-27T13:36:25.815+05:30  INFO 20696 --- [AppUsageTracker] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-09-27T13:36:26.051+05:30  INFO 20696 --- [AppUsageTracker] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.sqlite.jdbc4.JDBC4Connection@54326e9
+2025-09-27T13:36:26.053+05:30  INFO 20696 --- [AppUsageTracker] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-09-27T13:36:26.102+05:30  INFO 20696 --- [AppUsageTracker] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 3.49.1
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-09-27T13:36:26.718+05:30  INFO 20696 --- [AppUsageTracker] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-09-27T13:36:26.744+05:30  INFO 20696 --- [AppUsageTracker] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-09-27T13:36:26.956+05:30  INFO 20696 --- [AppUsageTracker] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-09-27T13:36:27.801+05:30  WARN 20696 --- [AppUsageTracker] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-09-27T13:36:28.483+05:30  INFO 20696 --- [AppUsageTracker] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 10009 (http) with context path '/'
+2025-09-27T13:36:28.495+05:30  INFO 20696 --- [AppUsageTracker] [main] c.e.A.AppUsageTrackerApplication         : Started AppUsageTrackerApplication in 5.158 seconds (process running for 5.525)
+2025-09-27T13:36:33.002+05:30  INFO 20696 --- [AppUsageTracker] [http-nio-10009-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-09-27T13:36:33.003+05:30  INFO 20696 --- [AppUsageTracker] [http-nio-10009-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-09-27T13:36:33.004+05:30  INFO 20696 --- [AppUsageTracker] [http-nio-10009-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-09-27T13:36:49.699+05:30 ERROR 20696 --- [AppUsageTracker] [http-nio-10009-exec-9] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: java.time.DateTimeException: Unable to obtain Instant from TemporalAccessor: 2025-09-26 of type java.time.LocalDate] with root cause
+
+java.time.temporal.UnsupportedTemporalTypeException: Unsupported field: InstantSeconds
+	at java.base/java.time.LocalDate.get0(LocalDate.java:698) ~[na:na]
+	at java.base/java.time.LocalDate.getLong(LocalDate.java:678) ~[na:na]
+	at java.base/java.time.Instant.from(Instant.java:376) ~[na:na]
+	at com.example.AppUsageTracker.AppUsageLogicService.getBasedOnDate(AppUsageLogicService.java:37) ~[classes/:na]
+	at com.example.AppUsageTracker.AppUsageController.GetBasedOnDate(AppUsageController.java:44) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:258) ~[spring-web-6.2.11.jar:6.2.11]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:191) ~[spring-web-6.2.11.jar:6.2.11]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118) ~[spring-webmvc-6.2.11.jar:6.2.11]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:991) ~[spring-webmvc-6.2.11.jar:6.2.11]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:896) ~[spring-webmvc-6.2.11.jar:6.2.11]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-6.2.11.jar:6.2.11]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089) ~[spring-webmvc-6.2.11.jar:6.2.11]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979) ~[spring-webmvc-6.2.11.jar:6.2.11]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-6.2.11.jar:6.2.11]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903) ~[spring-webmvc-6.2.11.jar:6.2.11]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564) ~[tomcat-embed-core-10.1.46.jar:6.0]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.2.11.jar:6.2.11]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.46.jar:6.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195) ~[tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.2.11.jar:6.2.11]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.11.jar:6.2.11]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.2.11.jar:6.2.11]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.11.jar:6.2.11]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.2.11.jar:6.2.11]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.11.jar:6.2.11]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483) ~[tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:116) ~[tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344) ~[tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:398) ~[tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903) ~[tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1776) ~[tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:975) ~[tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:493) ~[tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.46.jar:10.1.46]
+	at java.base/java.lang.Thread.run(Thread.java:1447) ~[na:na]
+
+2025-09-27T13:37:10.829+05:30 ERROR 20696 --- [AppUsageTracker] [http-nio-10009-exec-5] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: java.time.DateTimeException: Unable to obtain Instant from TemporalAccessor: 2025-09-25 of type java.time.LocalDate] with root cause
+
+java.time.temporal.UnsupportedTemporalTypeException: Unsupported field: InstantSeconds
+	at java.base/java.time.LocalDate.get0(LocalDate.java:698) ~[na:na]
+	at java.base/java.time.LocalDate.getLong(LocalDate.java:678) ~[na:na]
+	at java.base/java.time.Instant.from(Instant.java:376) ~[na:na]
+	at com.example.AppUsageTracker.AppUsageLogicService.getBasedOnDate(AppUsageLogicService.java:37) ~[classes/:na]
+	at com.example.AppUsageTracker.AppUsageController.GetBasedOnDate(AppUsageController.java:44) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:258) ~[spring-web-6.2.11.jar:6.2.11]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:191) ~[spring-web-6.2.11.jar:6.2.11]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118) ~[spring-webmvc-6.2.11.jar:6.2.11]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:991) ~[spring-webmvc-6.2.11.jar:6.2.11]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:896) ~[spring-webmvc-6.2.11.jar:6.2.11]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-6.2.11.jar:6.2.11]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089) ~[spring-webmvc-6.2.11.jar:6.2.11]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979) ~[spring-webmvc-6.2.11.jar:6.2.11]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-6.2.11.jar:6.2.11]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903) ~[spring-webmvc-6.2.11.jar:6.2.11]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564) ~[tomcat-embed-core-10.1.46.jar:6.0]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.2.11.jar:6.2.11]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.46.jar:6.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195) ~[tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.2.11.jar:6.2.11]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.11.jar:6.2.11]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.2.11.jar:6.2.11]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.11.jar:6.2.11]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.2.11.jar:6.2.11]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.11.jar:6.2.11]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483) ~[tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:116) ~[tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344) ~[tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:398) ~[tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903) ~[tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1776) ~[tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:975) ~[tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:493) ~[tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.46.jar:10.1.46]
+	at java.base/java.lang.Thread.run(Thread.java:1447) ~[na:na]
+
+2025-09-27T13:41:32.897+05:30  INFO 20696 --- [AppUsageTracker] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-09-27T13:41:32.905+05:30  INFO 20696 --- [AppUsageTracker] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-09-27T13:41:32.908+05:30  INFO 20696 --- [AppUsageTracker] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-09-27T13:41:32.910+05:30  INFO 20696 --- [AppUsageTracker] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-09-27T13:41:32.912+05:30  INFO 20696 --- [AppUsageTracker] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-09-27T13:41:36.384+05:30  INFO 23656 --- [AppUsageTracker] [main] c.e.A.AppUsageTrackerApplication         : Starting AppUsageTrackerApplication using Java 24.0.2 with PID 23656 (D:\e\AppUsageTracker\AppUsageTracker\target\classes started by Sribalaji in D:\e\AppUsageTracker\AppUsageTracker)
+2025-09-27T13:41:36.385+05:30 DEBUG 23656 --- [AppUsageTracker] [main] c.e.A.AppUsageTrackerApplication         : Running with Spring Boot v3.5.6, Spring v6.2.11
+2025-09-27T13:41:36.386+05:30  INFO 23656 --- [AppUsageTracker] [main] c.e.A.AppUsageTrackerApplication         : No active profile set, falling back to 1 default profile: "default"
+2025-09-27T13:41:37.067+05:30  INFO 23656 --- [AppUsageTracker] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-09-27T13:41:37.132+05:30  INFO 23656 --- [AppUsageTracker] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 49 ms. Found 1 JPA repository interface.
+2025-09-27T13:41:37.613+05:30  INFO 23656 --- [AppUsageTracker] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 10009 (http)
+2025-09-27T13:41:37.633+05:30  INFO 23656 --- [AppUsageTracker] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-09-27T13:41:37.634+05:30  INFO 23656 --- [AppUsageTracker] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.46]
+2025-09-27T13:41:37.686+05:30  INFO 23656 --- [AppUsageTracker] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-09-27T13:41:37.687+05:30  INFO 23656 --- [AppUsageTracker] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1249 ms
+2025-09-27T13:41:37.886+05:30  INFO 23656 --- [AppUsageTracker] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-09-27T13:41:37.941+05:30  INFO 23656 --- [AppUsageTracker] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.29.Final
+2025-09-27T13:41:37.973+05:30  INFO 23656 --- [AppUsageTracker] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-09-27T13:41:38.246+05:30  INFO 23656 --- [AppUsageTracker] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-09-27T13:41:38.289+05:30  INFO 23656 --- [AppUsageTracker] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-09-27T13:41:38.513+05:30  INFO 23656 --- [AppUsageTracker] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.sqlite.jdbc4.JDBC4Connection@78b0ec3a
+2025-09-27T13:41:38.515+05:30  INFO 23656 --- [AppUsageTracker] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-09-27T13:41:38.558+05:30  INFO 23656 --- [AppUsageTracker] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 3.49.1
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-09-27T13:41:39.215+05:30  INFO 23656 --- [AppUsageTracker] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-09-27T13:41:39.248+05:30  INFO 23656 --- [AppUsageTracker] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-09-27T13:41:39.484+05:30  INFO 23656 --- [AppUsageTracker] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-09-27T13:41:40.252+05:30  WARN 23656 --- [AppUsageTracker] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-09-27T13:41:40.748+05:30  INFO 23656 --- [AppUsageTracker] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 10009 (http) with context path '/'
+2025-09-27T13:41:40.758+05:30  INFO 23656 --- [AppUsageTracker] [main] c.e.A.AppUsageTrackerApplication         : Started AppUsageTrackerApplication in 4.88 seconds (process running for 5.222)
+2025-09-27T13:41:49.169+05:30  INFO 23656 --- [AppUsageTracker] [http-nio-10009-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-09-27T13:41:49.169+05:30  INFO 23656 --- [AppUsageTracker] [http-nio-10009-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-09-27T13:41:49.170+05:30  INFO 23656 --- [AppUsageTracker] [http-nio-10009-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-09-27T18:09:30.909+05:30  WARN 23656 --- [AppUsageTracker] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=4h19m52s273ms20µs600ns).
+2025-09-27T18:26:13.065+05:30  INFO 23656 --- [AppUsageTracker] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-09-27T18:26:13.077+05:30  INFO 23656 --- [AppUsageTracker] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-09-27T18:26:13.091+05:30  INFO 23656 --- [AppUsageTracker] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-09-27T18:26:13.109+05:30  INFO 23656 --- [AppUsageTracker] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-09-27T18:26:13.117+05:30  INFO 23656 --- [AppUsageTracker] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-09-27T18:26:41.470+05:30  INFO 22820 --- [AppUsageTracker] [main] c.e.A.AppUsageTrackerApplicationTests    : Starting AppUsageTrackerApplicationTests using Java 20 with PID 22820 (started by Sribalaji in D:\e\AppUsageTracker\AppUsageTracker)
+2025-09-27T18:26:41.471+05:30 DEBUG 22820 --- [AppUsageTracker] [main] c.e.A.AppUsageTrackerApplicationTests    : Running with Spring Boot v3.5.6, Spring v6.2.11
+2025-09-27T18:26:41.472+05:30  INFO 22820 --- [AppUsageTracker] [main] c.e.A.AppUsageTrackerApplicationTests    : No active profile set, falling back to 1 default profile: "default"
+2025-09-27T18:26:42.136+05:30  INFO 22820 --- [AppUsageTracker] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-09-27T18:26:42.200+05:30  INFO 22820 --- [AppUsageTracker] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 47 ms. Found 1 JPA repository interface.
+2025-09-27T18:26:42.645+05:30  INFO 22820 --- [AppUsageTracker] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-09-27T18:26:42.697+05:30  INFO 22820 --- [AppUsageTracker] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.29.Final
+2025-09-27T18:26:42.726+05:30  INFO 22820 --- [AppUsageTracker] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-09-27T18:26:43.106+05:30  INFO 22820 --- [AppUsageTracker] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-09-27T18:26:43.149+05:30  INFO 22820 --- [AppUsageTracker] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-09-27T18:26:43.408+05:30  INFO 22820 --- [AppUsageTracker] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.sqlite.jdbc4.JDBC4Connection@4fbb1144
+2025-09-27T18:26:43.410+05:30  INFO 22820 --- [AppUsageTracker] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-09-27T18:26:43.448+05:30  INFO 22820 --- [AppUsageTracker] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 3.49.1
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-09-27T18:26:44.057+05:30  INFO 22820 --- [AppUsageTracker] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-09-27T18:26:44.084+05:30  INFO 22820 --- [AppUsageTracker] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-09-27T18:26:44.404+05:30  INFO 22820 --- [AppUsageTracker] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-09-27T18:26:45.268+05:30  WARN 22820 --- [AppUsageTracker] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-09-27T18:26:45.903+05:30  INFO 22820 --- [AppUsageTracker] [main] c.e.A.AppUsageTrackerApplicationTests    : Started AppUsageTrackerApplicationTests in 4.737 seconds (process running for 6.163)
+2025-09-27T18:26:46.443+05:30  INFO 22820 --- [AppUsageTracker] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-09-27T18:26:46.445+05:30  INFO 22820 --- [AppUsageTracker] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-09-27T18:26:46.447+05:30  INFO 22820 --- [AppUsageTracker] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-09-27T18:27:04.390+05:30  INFO 21572 --- [AppUsageTracker] [main] c.e.A.AppUsageTrackerApplicationTests    : Starting AppUsageTrackerApplicationTests using Java 20 with PID 21572 (started by Sribalaji in D:\e\AppUsageTracker\AppUsageTracker)
+2025-09-27T18:27:04.391+05:30 DEBUG 21572 --- [AppUsageTracker] [main] c.e.A.AppUsageTrackerApplicationTests    : Running with Spring Boot v3.5.6, Spring v6.2.11
+2025-09-27T18:27:04.392+05:30  INFO 21572 --- [AppUsageTracker] [main] c.e.A.AppUsageTrackerApplicationTests    : No active profile set, falling back to 1 default profile: "default"
+2025-09-27T18:27:05.024+05:30  INFO 21572 --- [AppUsageTracker] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-09-27T18:27:05.091+05:30  INFO 21572 --- [AppUsageTracker] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 49 ms. Found 1 JPA repository interface.
+2025-09-27T18:27:05.515+05:30  INFO 21572 --- [AppUsageTracker] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-09-27T18:27:05.585+05:30  INFO 21572 --- [AppUsageTracker] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.29.Final
+2025-09-27T18:27:05.618+05:30  INFO 21572 --- [AppUsageTracker] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-09-27T18:27:05.998+05:30  INFO 21572 --- [AppUsageTracker] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-09-27T18:27:06.038+05:30  INFO 21572 --- [AppUsageTracker] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-09-27T18:27:06.312+05:30  INFO 21572 --- [AppUsageTracker] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.sqlite.jdbc4.JDBC4Connection@349f0ca4
+2025-09-27T18:27:06.315+05:30  INFO 21572 --- [AppUsageTracker] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-09-27T18:27:06.357+05:30  INFO 21572 --- [AppUsageTracker] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 3.49.1
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-09-27T18:27:06.997+05:30  INFO 21572 --- [AppUsageTracker] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-09-27T18:27:07.031+05:30  INFO 21572 --- [AppUsageTracker] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-09-27T18:27:07.300+05:30  INFO 21572 --- [AppUsageTracker] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-09-27T18:27:08.121+05:30  WARN 21572 --- [AppUsageTracker] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-09-27T18:27:08.734+05:30  INFO 21572 --- [AppUsageTracker] [main] c.e.A.AppUsageTrackerApplicationTests    : Started AppUsageTrackerApplicationTests in 4.66 seconds (process running for 5.595)
+2025-09-27T18:27:09.205+05:30  INFO 21572 --- [AppUsageTracker] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-09-27T18:27:09.208+05:30  INFO 21572 --- [AppUsageTracker] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-09-27T18:27:09.211+05:30  INFO 21572 --- [AppUsageTracker] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

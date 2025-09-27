@@ -17,6 +17,7 @@ import org.apache.http.util.EntityUtils;
 
 import java.io.IOException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -59,6 +60,14 @@ public class DataController {
 
     @FXML
     private DatePicker calender;
+
+    private int index = 0;//default pie chart
+
+    private int day;
+    private int month;
+    private int year;
+
+
 
 
 
@@ -172,34 +181,40 @@ public class DataController {
             int selectedIndex = chartChoice.getSelectionModel().getSelectedIndex();
 
             System.out.println("value is "+selectedIndex);
-            handleChoiceSelection(selectedIndex);
+            index = selectedIndex;
+//            handleChoiceSelection(selectedIndex);
+            fetchDataBasedOnDate(index);
         });
     }
 
-    private void handleChoiceSelection(int index){
-        switch (index) {
-            case 0:
-                fetchDataAsync(0);
-                break;
-            case 1:
-                fetchDataAsync(1);
-                break;
-            case 2:
-                fetchDataAsync(2);
-                break;
-            default:
-                System.out.println("Pie chart selected");
-        }
-    }
+//    private void handleChoiceSelection(int index){
+//        switch (index) {
+//            case 0:
+//                fetchDataAsync(0);
+//                break;
+//            case 1:
+//                fetchDataAsync(1);
+//                break;
+//            case 2:
+//                fetchDataAsync(2);
+//                break;
+//            default:
+//                fetchDataAsync(0);
+//        }
+//    }
 
     @FXML
     private void initialize() {
-        handleChoiceSelection(0);
+//        handleChoiceSelection(0);
+
+
         updateComboBox();
+        updateDate();
 
-
+//        fetchDataBasedOnDate(index);
         // Fetch data on startup
 //        fetchDataAsync();
+        fetchDataBasedOnDate(index);
         fetchDailyDataAsync();
 
         // Bind ObservableList to TableView
@@ -237,9 +252,25 @@ public class DataController {
 
     }
 
+    private void updateDate(){
+        day  = LocalDate.now().getDayOfMonth();
+        month = LocalDate.now().getMonthValue();
+        year = LocalDate.now().getYear();
+        calender.setOnAction((event) ->{
+            LocalDate date = calender.getValue();
+            if(date != null){
+                month = date.getMonthValue();
+                year = date.getYear();
+                day = date.getDayOfMonth();
+            }
+            fetchDataBasedOnDate(index);
+//            updateComboBox();
+        });
+    }
+
     private void fetchDailyDataAsync(){
         new Thread(() -> {
-            String url = "http://localhost:8080/app/screen/daily";
+            String url = "http://localhost:10009/app/screen/daily";
             CloseableHttpClient httpClient = null;
             try {
                 httpClient = HttpClients.createDefault();
@@ -274,9 +305,67 @@ public class DataController {
         }).start();
     }
 
+    private void updateCharts(int idx){
+        if(idx==0) {
+            barChartAnalysis.setVisible(false);
+            lineChartAnalysis.setVisible(false);
+            pieChartAnalysis.setVisible(true);
+            updatePieChart(usageData);
+        }
+        else if(idx==1){
+            barChartAnalysis.setVisible(false);
+            pieChartAnalysis.setVisible(false);
+            lineChartAnalysis.setVisible(true);
+            updateLineChart(usageData);
+        }
+        else if(idx==2) {
+            pieChartAnalysis.setVisible(false);
+            lineChartAnalysis.setVisible(false);
+            barChartAnalysis.setVisible(true);
+            updateBarChart(usageData);
+        }
+    }
+
+    private void fetchDataBasedOnDate(int idx){
+        new Thread(() -> {
+            String url = "http://localhost:10009/app/screen/date?day=" + day + "&month=" + month + "&year=" + year;
+            CloseableHttpClient httpClient = null;
+            try{
+                httpClient = HttpClients.createDefault();
+                HttpGet request = new HttpGet(url);
+                try(CloseableHttpResponse response = httpClient.execute(request)){
+                    String json = EntityUtils.toString(response.getEntity());
+                    ObjectMapper mapper = new ObjectMapper();
+                    List<DataModel> usageList = mapper.readValue(json,mapper.getTypeFactory().constructCollectionType(List.class,DataModel.class));
+                    Platform.runLater(() ->{
+                        usageData.clear();
+                        usageData.setAll(usageList);
+                        updateCharts(idx);
+                    });
+
+                }
+            } catch (IOException e) {
+                System.err.println("can't fetch the data: "+e.getMessage());
+                Platform.runLater(() ->
+                        usageData.setAll()
+                );
+            } finally {
+                if(httpClient != null){
+                    try{
+                        httpClient.close();
+                    }catch (IOException e){
+                        System.err.println(e.getMessage());
+                    }
+                }
+            }
+
+
+
+        }).start();
+    }
     private void fetchDataAsync(int idx) {
         new Thread(() -> {
-            String url = "http://localhost:8080/app/screen/today"; // Verify this endpoint
+            String url = "http://localhost:10009/app/screen/today"; // Verify this endpoint
             CloseableHttpClient httpClient = null;
             try {
                 httpClient = HttpClients.createDefault();
@@ -292,25 +381,27 @@ public class DataController {
                     }
                     // Update UI on JavaFX thread
                     Platform.runLater(() -> {
+                        usageData.clear();
                         usageData.setAll(usageList);
-                        if(idx==0) {
-                            barChartAnalysis.setVisible(false);
-                            lineChartAnalysis.setVisible(false);
-                            pieChartAnalysis.setVisible(true);
-                            updatePieChart(usageData);
-                        }
-                        else if(idx==1){
-                            barChartAnalysis.setVisible(false);
-                            pieChartAnalysis.setVisible(false);
-                            lineChartAnalysis.setVisible(true);
-                            updateLineChart(usageData);
-                        }
-                        else if(idx==2) {
-                            pieChartAnalysis.setVisible(false);
-                            lineChartAnalysis.setVisible(false);
-                            barChartAnalysis.setVisible(true);
-                            updateBarChart(usageData);
-                        }
+                        updateCharts(idx);
+//                        if(idx==0) {
+//                            barChartAnalysis.setVisible(false);
+//                            lineChartAnalysis.setVisible(false);
+//                            pieChartAnalysis.setVisible(true);
+//                            updatePieChart(usageData);
+//                        }
+//                        else if(idx==1){
+//                            barChartAnalysis.setVisible(false);
+//                            pieChartAnalysis.setVisible(false);
+//                            lineChartAnalysis.setVisible(true);
+//                            updateLineChart(usageData);
+//                        }
+//                        else if(idx==2) {
+//                            pieChartAnalysis.setVisible(false);
+//                            lineChartAnalysis.setVisible(false);
+//                            barChartAnalysis.setVisible(true);
+//                            updateBarChart(usageData);
+//                        }
 
 
                     });
@@ -342,7 +433,9 @@ public class DataController {
         pieChartAnalysis.getData().clear();
         DailyUsageData.clear();
         dailyScreenTimeLineChart.getData().clear();
-        updateComboBox();
+//        updateComboBox();
+//        fetchDataAsync(index);
+        fetchDataBasedOnDate(index);
         fetchDailyDataAsync();
     }
 }

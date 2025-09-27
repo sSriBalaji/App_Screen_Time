@@ -5,13 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="baefdf94-6bbf-4b88-be89-54f7bc2d6351" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../AppUsageTracker/target/AppUsageTracker-0.0.1-SNAPSHOT.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../AppUsageTracker/target/AppUsageTracker-0.0.1-SNAPSHOT.jar.original" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/data_visualizer/DataController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/data_visualizer/DataController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/data_visualizer/Home_Screen.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/data_visualizer/Home_Screen.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/data_visualizer/DataController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/data_visualizer/DataController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/data_visualizer/Home_Screen.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/data_visualizer/Home_Screen.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,7 +36,7 @@
     </favorite-branches>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$/.." value="main" />
+        <entry key="$PROJECT_DIR$/.." value="master" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -53,12 +47,12 @@
     &quot;assignee&quot;: &quot;sSriBalaji&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/sSriBalaji/App_Screen_Time.git",
-    "accountId": "ef06ed6e-5ee2-4067-b3e8-1b426120f60e"
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/sSriBalaji/App_Screen_Time.git&quot;,
+    &quot;accountId&quot;: &quot;ef06ed6e-5ee2-4067-b3e8-1b426120f60e&quot;
   }
-}]]></component>
+}</component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
@@ -77,16 +71,16 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.HelloApplication.executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "master",
-    "last_directory_selection": "D:/e/AppUsageTracker/Data_Visualizer/src/main/java/org/example/data_visualizer"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.HelloApplication.executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_directory_selection&quot;: &quot;D:/e/AppUsageTracker/Data_Visualizer/src/main/java/org/example/data_visualizer&quot;
   }
-}]]></component>
+}</component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="baefdf94-6bbf-4b88-be89-54f7bc2d6351" name="Changes" comment="" />
@@ -96,5 +90,16 @@
       <updated>1758539592899</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
